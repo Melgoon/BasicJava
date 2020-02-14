@@ -10,10 +10,10 @@ public class Test01 {
 //			String member = members[i];
 //			System.out.println(member + "이 상담을 받았습니다.");
 //		}
-		String[] members = { "최진혁","최유빈","한이람"};
-		for(String e : members){
-			System.out.println(e + "이 상담을 받았습니다.");
-		}
+//		String[] members = { "최진혁","최유빈","한이람"};
+//		for(String e : members){
+//			System.out.println(e + "이 상담을 받았습니다.");
+//		}
 		
 		
 		/*double a=3.14;
@@ -117,6 +117,88 @@ public class Test01 {
 //		System.out.println(classGroup.length);
 //		classGroup[3] = "이고잉";
 //		System.out.println(classGroup.length);
+		
+//		int year = 0;
+//		int age = 14;
+//		System.out.println(year);
+//		System.out.println(age);
+//		year = age + 2000;
+//		age = age + 1;
+//		System.out.println(year);
+//		System.out.println(age);
+//		
+//		int x = 10, y = 20;
+//		int tmp = 0;
+//		
+//		System.out.println("x:" + x + " y:" + y);
+//		
+//		tmp = x; // x = 10을 tmp에 담는다. 그러면 tmp는 10이 저장됨
+//		x = y; // x에 y를 담는다. 그러면 x는 20이 저장된다.
+//		y = tmp; // y에 tmp를 담는다 위에서 10을 저장한 tmp의 10 값이 y에 저장된다.
+//		System.out.println("x:"+x + " y:" + y); // 그러면 x는 20을 출력하고 y는 10을 출력한다.
+//		
+//		String name = "Ja" + "va";
+//		String str = name + 8.0; // name에 저장한 변수와 8.0을 저장
+//		
+//		System.out.println(name); // name 변수Z에 저장한 값을 출력
+//		System.out.println(str); // str 변수에 저장한 값을 출력
+//		System.out.println(7 + " "); // 7과 " "(공백을 출력) 이하는 거의 같은 맥락
+//		System.out.println(" " + 7);
+//		System.out.println(7 + "");
+//		System.out.println("" + 7);
+//		System.out.println("" + "");
+//		System.out.println(7 + 7 + "");
+//		System.out.println("" + 7 + 7);
+//		
+//		
+		//형식화된 출력 --printf()
+//		byte b =1;
+//		short s = 2;
+//		char c = 'A';
+//		
+//		int finger = 10;
+//		long big = 100_000_000_000L; // long big = 100000000000L;
+//		long hex = 0xFFFF_FFFF_FFFF_FFFFL ;
+//		
+//		int octNum = 010; // 8진수 10, 10진수로
+//		int hexNum = 0x10; // 16진수 10, 10진수로는 16
+//		int binNum = 0b10; // 2진수 10, 10진수로는 2
+//		
+//		System.out.printf("b=%d%n", b);
+//		System.out.printf("s=%d%n", s);
+//		System.out.printf("c=%c, %d %n", c, (int)c);
+//		System.out.printf("finger=[%5d]%n", finger);
+//		System.out.printf("finger=[%-5d]%n", finger);
+//		System.out.printf("finger=[%05d]%n",finger);
+//		System.out.printf("big=%d%n",big);
+//		System.out.printf("hex=%#x%n", hex);
+//		System.out.printf("octNum=%o, %d%n", octNum, octNum);
+//		System.out.printf("hexNum=%x, %d%n", hexNum, hexNum);
+//		System.out.printf("binNun=%s, %d%n", Integer.toBinaryString(binNum), binNum);
+		
+		
+		String url = "www.codechobo.com";
+		float f1 = .10f;
+		float f2 = 1e1f;
+		float f3 = 3.14e3f;
+		double d = 1.23456789;
+		
+		System.out.printf("f1=%f, %e, %g%n", f1, f1, f1);
+		System.out.printf("f2=%f, %e, %g%n", f2, f2, f2);
+		System.out.printf("f3=%f, %e, %g%n", f3, f3, f3);
+		
+		System.out.printf("d=%f%n", d);
+		System.out.printf("d=%14.10f%n", d); // 전체 14자리 중 소수점 10자리
+		
+		System.out.printf("[12345678901234567890]%n");
+		System.out.printf("[%s]%n", url);
+		System.out.printf("[%20s]%n", url);
+		System.out.printf("[%-20s]%n", url); // 왼쪽 정렬
+		System.out.printf("[%.8s]%n", url); // 왼쪽에서 8글자만 출력
+
+		
+		
+		
 
 	}
 

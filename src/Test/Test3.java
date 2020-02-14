@@ -1,6 +1,6 @@
 package Test;
 import java.util.Arrays;
-import java.util.*;
+import java.util.Scanner;
 public class Test3 {
 
 	public static void main(String[] args) {
@@ -71,6 +71,13 @@ public class Test3 {
 //	System.out.println("arr.length:"+arr.length);
 //	for(int i=0; i < arr.length;i++)
 //		System.out.println("arr["+i+"]:"+arr[i]); // 배열에 배당된 숫자를 for문으로 배열의 끝까지 돌려 출력
+		
+		Scanner s = new Scanner(System.in);
+		int sum = 0;
+		for(int i = 1; i <= 100; i++){
+			sum += i;
+		}
+		System.out.println(sum);
 		
 	} // main
 

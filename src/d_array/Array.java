@@ -1,5 +1,6 @@
 package d_array;
 import java.util.Arrays;
+import java.util.Scanner;
 public class Array {
 
 	public static void main(String[] args) {
@@ -139,7 +140,7 @@ public class Array {
 //			int f =(int) (Math.random() * su.length);
 //		}
 //		System.out.println(Arrays.toString(su));
-		
+//		효울이 나쁜 코드
 //		int[] numArr = new int[500];
 //		int[] conuter = new int[500];
 //		
@@ -155,22 +156,34 @@ public class Array {
 //			System.out.println(i +"의 갯수 :" + conuter[i]);
 //		}
 		
-		int[] numArr = new int[1];
-		int[] conuter = new int[10];
-		int aa1 = 0;
-		for(int i = 0; i<= 500; i++){
-			aa1 = (int)(Math.random() *10);
-			numArr[i] = aa1;
-			conuter[numArr[i]]++;
+		int[] counts = new int[10];
+		for(int i = 0; i < 500; i++){
+			int random = (int)(Math.random() * 10) + 1;
+			counts[random - 1]++;
 		}
-		for(int i = 0; i < numArr.length; i++){
-			conuter[numArr[i]]++;
-		}
-		for(int i=0; i < numArr.length; i++){
-			System.out.println(i + "의 개수 " + conuter[i]);
+		for(int i = 0; i < counts.length; i++){
+			System.out.println(i + 1 + " : " + counts[i]);
 		}
 		
 			
 			// 위 문제의 최소값, 최대값, 반복횟수를 입력받아 각 숫자가 생성된 횟수를 출력해주세요.
+		// 반복문을 찾을땐 규칙을 찾는다.
+		Scanner s = new Scanner(System.in);
+		System.out.println("최소값>");
+		int min2 = Integer.parseInt(s.nextLine());
+		System.out.println("최대값>");
+		int max2 = Integer.parseInt(s.nextLine());
+		System.out.println("반복 횟수>");
+		int repeat = Integer.parseInt(s.nextLine());
+		
+		counts = new int[max2 - min2 + 1];
+		
+		for(int i = 0; i < repeat; i++){
+			int random = (int)(Math.random() * (max2 - min2 + 1)) + min2; // 랜덤으로 값을 생성하여 랜덤에 넣는다.
+			counts[random - min2]++;
+		}
+		for(int i = 0; i < counts.length; i++){
+			System.out.println(i + min2 + " : " + counts[i]);
+		}
 		}
 	}
