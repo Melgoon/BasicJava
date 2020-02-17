@@ -4,6 +4,7 @@ public class Store {
 	public static void main(String[] args) {
 		Customer c = new Customer(); // 객체 생성
 		Product p = (Product)new Desktop(); // 객체 생성 //  (형변환 생략) 자식클래스 -> 부모클래스
+		Product p1 = (Product)new TV();
 		p.info(); // 상품 내용
 		c.buy(p); // 상품 구매
 		

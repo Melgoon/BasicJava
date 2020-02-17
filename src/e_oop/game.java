@@ -5,7 +5,7 @@ public class game {
    String name;
    int LV = 16;
    //몬스터,아이템,레벨,경험치,능력치,동료테이블,몬스터 숫자,정사루트,IF루트,게임시작,게임종료,타이틀
-   void START(){ // 게임 시작
+   public void START(){ // 게임 시작
       System.out.println("RPG");
       System.out.println("게임을 시작하시겠습니까?");
       System.out.println("1. 새로운 시작 2. 게임 종료");
