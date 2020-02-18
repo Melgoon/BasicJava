@@ -5,11 +5,13 @@ public class game {
 	 Scanner s = new Scanner(System.in);
 	 Product name;
 	 Product price;
-	 Product p = (Product)new Desktop();
-	 Product p1 = (Product)new TV();
-	 Product p2 = (Product)new coffee();
-	 Product p3 = (Product)new iPhone();
+	 Product p = (Product)new Water();
+	 Product p1 = (Product)new Moonshin();
+	 Product p2 = (Product)new MRE();
+	 Product p3 = (Product)new Survkit();
+	 Product p4 = (Product)new Wcase();
 	 Customer c = new Customer();
+	 
 	 
 	   void START(){ // 게임 시작
 	      System.out.println("중고나라");
@@ -25,23 +27,30 @@ public class game {
 	   }
 	   
 	   void menu(){
-	      System.out.println("1.상품목록 2.내 장바구니 및 현금");
+	      System.out.println("1.상품목록 2.내 장바구니 및 현금 3. 상품 시세");
 	      String so = s.nextLine();
 	      if(so.equals("1")){
 	    	  info();
-	      }else{
+	      }else if(so.equals("2")){
 	    	 showItem();
+	   }else{
+		   infomenu();
 	   }
 	   }
 
 	      void info(){ 
+	    	 
 	    	  p.info();
-	    	  p1 = new TV();
+	    	  
 	    	  p1.info();
-	    	  p2 = new coffee();
+	    	  
 	    	  p2.info();
-	    	  p3 = new iPhone();
+	    	  
 	    	  p3.info();
+	    	  
+	    	  p4.info();
+	    	  
+	    	  System.out.println("구매할 물품의 번호를 입력하세요.");
 	    	  String so = s.nextLine();
 	    	  
 	    	  if(so.equals("1")){
@@ -56,13 +65,64 @@ public class game {
 	    	  }else if(so.equals("4")){
 	    		  c.buy(p3);
 	    		  menu();
+	    	  }else if(so.equals("5")){
+	    		  c.buy(p4);
+	    		  menu();
 	    	  }
-	    	  
+	      }
+	      void infomenu(){
+	    	  p = new Water();
+	    	  p.info();
+	    	  p1 = new Moonshin();
+	    	  p1.info();
+	    	  p2 = new MRE();
+	    	  p2.info();
+	    	  p3 = new Survkit();
+	    	  p3.info();
+	    	  p4 = new Wcase();
+	    	  p4.info();
+	    	  menu();
 	      }
 	      
 	      void showItem(){
 	    	  c.showItem();
-	    	  menu();
+	    	  System.out.println("1.팔기메뉴 2.메뉴");
+		      String so = s.nextLine();
+			  if(so.equals("1")){
+	    		  sell();
+			  }else if(so.equals("2")){
+				  menu();
+			  }else{
+				  
+			  }
+	      }
+	      
+	      void sell(){
+	    	  p.info();
+	    	  p1.info();
+	    	  p2.info();
+	    	  p3.info();
+	    	  p4.info();
+	    	  System.out.println("판매할 물품의 번호를 입력하세요. "+" \n "+ "6번을 입력하면 메뉴로 갑니다.");
+	    	  String so = s.nextLine();
+	    	  if(so.equals("1")){
+	    		  c.sell(p);
+	    		  menu();
+			  }else if(so.equals("2")){
+				  c.sell(p1);
+				  menu();
+			  }else if(so.equals("3")){
+				  c.sell(p2);
+				  menu();
+			  }else if(so.equals("4")){
+				  c.sell(p3);
+				  menu();
+			  }else if(so.equals("5")){
+				  c.sell(p4);
+				  menu();
+			  }else{
+				  menu();
+			  }
 	      }
 
 	   void gameexit(){
