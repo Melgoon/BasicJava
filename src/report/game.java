@@ -10,6 +10,7 @@ public class game {
 	 Product p2 = (Product)new MRE();
 	 Product p3 = (Product)new Survkit();
 	 Product p4 = (Product)new Wcase();
+	 Product p5 = (Product)new Salewa();
 	 Customer c = new Customer();
 	 
 	 
@@ -27,14 +28,16 @@ public class game {
 	   }
 	   
 	   void menu(){
-	      System.out.println("1.상품목록 2.내 장바구니 및 현금 3. 상품 시세");
+	      System.out.println("1.상품목록 2.내 장바구니 3. 상품 시세 4.보유중인 금액");
 	      String so = s.nextLine();
 	      if(so.equals("1")){
 	    	  info();
 	      }else if(so.equals("2")){
 	    	 showItem();
-	   }else{
+	   }else if(so.equals("3")){
 		   infomenu();
+	   }else{
+		   money();
 	   }
 	   }
 
@@ -68,6 +71,9 @@ public class game {
 	    	  }else if(so.equals("5")){
 	    		  c.buy(p4);
 	    		  menu();
+	    	  }else if(so.equals("6")){
+	    		  c.buy(p5);
+	    		  menu();
 	    	  }
 	      }
 	      void infomenu(){
@@ -81,6 +87,8 @@ public class game {
 	    	  p3.info();
 	    	  p4 = new Wcase();
 	    	  p4.info();
+	    	  p5 = new Salewa();
+	    	  p5.info();
 	    	  menu();
 	      }
 	      
@@ -103,7 +111,7 @@ public class game {
 	    	  p2.info();
 	    	  p3.info();
 	    	  p4.info();
-	    	  System.out.println("판매할 물품의 번호를 입력하세요. "+" \n "+ "6번을 입력하면 메뉴로 갑니다.");
+	    	  System.out.println("판매할 물품의 번호를 입력하세요. "+" \n "+ "7번을 입력하면 메뉴로 갑니다.");
 	    	  String so = s.nextLine();
 	    	  if(so.equals("1")){
 	    		  c.sell(p);
@@ -120,14 +128,26 @@ public class game {
 			  }else if(so.equals("5")){
 				  c.sell(p4);
 				  menu();
-			  }else{
+			  }else if(so.equals("6")){
+				  c.sell(p5);
 				  menu();
+			  }else{
+				  
 			  }
+	      }
+	      void money(){
+	    	  c.money();
+	    	  menu();
 	      }
 
 	   void gameexit(){
 	      System.out.println("게임을 종료하였습니다.");
 	   }
 	}
+
+//추가해야할 것 돈이 없다? 아르바이트 등을 추가하여 금액 조달(성공과 실패를 두고 얻는 알바비가 달라짐)
+//가능하다면 교역시스템같은 것도 추가
+//쌀을 구매해서 금으로 교환하고 도시의 시세의 %에 비례해서 구매,판매할때 가격이 달라지게
+
 
 

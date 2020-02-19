@@ -51,11 +51,16 @@ public class Product {
 			super(5,"무기 상자", Math.random()*1200000,1200000);
 		}
 	}
+	class Salewa extends Product{
+		Salewa(){
+			super(6,"살레와 의약 키트", Math.random()*600000,600000);
+		}
+	}
 	
 	class Customer{ // 클래스
 		
-		int money = 100000;
-		Product[] item = new Product[30]; // 장바구니
+		int money = 10000;
+		Product[] item = new Product[10]; // 장바구니
 		void buy(Product p){ // 구매
 			if(money < p.price){
 				System.out.println("돈이 부족합니다.");
@@ -73,7 +78,6 @@ public class Product {
 			}
 		
 		void showItem(){
-			System.out.println("내 현금 :" + money);
 			System.out.println("-------------장바구니--------------");
 			for(int i = 0; i < item.length; i++){ // 배열의 길이 수 만큼 출력한다.
 				if(item[i] != null){
@@ -85,10 +89,7 @@ public class Product {
 			System.out.println("----------------------------------");
 		}
 		void sell(Product p){
-			if(money < p.price){
-				System.out.println("");
-				return;
-			}
+			
 				money += p.price; // price 가격 만큼 money에 증감
 				for(int i = 0; i < item.length; i++){ 
 					if(item[i] != null){
@@ -98,4 +99,21 @@ public class Product {
 				}
 				System.out.println(p.name + "(을)를 판매했다.");
 		}
+		void money(){
+			System.out.println("목표 금액 : 100000000");
+			System.out.println("내 현금 :" + money);
+			if(money >= 100000000){
+				System.out.println("목표 금액까지 모았습니다.");
+				 System.exit(0);
+			}
+		}
+//		void parttimejob(){
+//			
+//			if(){
+//				
+//			}else{
+//				
+//			}
+//		}
+
 		}
