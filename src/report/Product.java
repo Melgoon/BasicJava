@@ -1,4 +1,7 @@
 package report;
+import java.util.Random;
+import java.util.Scanner;
+
 
 
 public class Product {
@@ -107,13 +110,29 @@ public class Product {
 				 System.exit(0);
 			}
 		}
-//		void parttimejob(){
-//			
-//			if(){
-//				
-//			}else{
-//				
-//			}
-//		}
-
+		void parttimejob(){
+			Random random = new Random(); 
+			Boolean [] enchant = new Boolean[4];
+			 for(int i=0; i<enchant.length; i++) {
+	                enchant[i] = random.nextBoolean();
+	                 
+	                if(enchant[i]) {
+	                    System.out.println("열심히 청소하는 중......");              
+	                }
+	                else System.out.println("진상 손님 응대 중......");
+	            }
+			if(enchant[0]){
+				System.out.println("일을 너무 형편없이 했네요!");
+				money += 2700;
+			}else if(enchant[1]){
+				System.out.println("평범하게 일했습니다.");
+				money += 5000;
+			}else if(enchant[2]){
+				System.out.println("타인의 귀감! 솔선수범하는 모습에 보너스까지!");
+				money += 10000;
+			}else if(enchant[3]){
+				System.out.println("근무 중 가게 물건을 부셔먹었습니다.");
+				money += 1300;
+			}
 		}
+	}
