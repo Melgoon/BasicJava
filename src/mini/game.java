@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class game {
 		Scanner s = new Scanner(System.in);
 		Princess p = new Princess();
+		int day;
+		int month;
 		
 		void START(){ // 게임 시작
 		      System.out.println("PrincessMaker");
@@ -14,10 +16,13 @@ public class game {
 		      if(so.equals("1")){
 		        name();
 		      }else{
-		         
+		    	exit();
 		      }
 
 }
+		void exit(){
+			System.out.println("게임을 종료하였습니다.");
+		}
 		void name(){
 			System.out.println("딸의 이름을 입력해주세요.");
 			p.name = s.nextLine();
@@ -31,7 +36,7 @@ public class game {
 			}
 		}
 		void menu(){
-			System.out.println("1.교육 2.아르바이트 3.자유행동 4.공주 상태");
+			System.out.println("1.교육 2.아르바이트 3.자유행동 4.공주 상태 ");
 			String so = s.nextLine();
 			if(so.equals("1")){
 				educate();
@@ -41,6 +46,14 @@ public class game {
 				Free_action();
 			}else if(so.equals("4")){
 				info();
+			}if(day>30){
+				month++;  
+		    	  }
+			if(month>12){
+				p.age++;
+			}
+			if(p.age>18){
+				p.ending();
 			}
 		}
 		void info(){
@@ -50,6 +63,7 @@ public class game {
 		
 		void Free_action(){
 			p.Free_action();
+			day++;
 			menu();
 		}
 		
@@ -58,27 +72,35 @@ public class game {
 			String so = s.nextLine();
 			if(so.equals("1")){
 				p.logging();
+				day++;
 	    		  menu();
 			}else if(so.equals("2")){
 				p.hospital();
+				day++;
 				menu();
 			}else if(so.equals("3")){
 				p.maid();
+				day++;
 				menu();
 			}else if(so.equals("4")){
 				p.bar();
+				day++;
 				menu();
 			}else if(so.equals("5")){
 				p.INN();
+				day++;
 				menu();
 			}else if(so.equals("6")){
 				p.ghostwriteshop();
+				day++;
 				menu();
 			}else if(so.equals("7")){
 				p.church();
+				day++;
 				menu();
 			}else if(so.equals("8")){
 				p.weaponshop();
+				day++;
 				menu();
 			}else if(so.equals("9")){
 				menu();
@@ -89,12 +111,15 @@ public class game {
 			String so = s.nextLine();
 			if(so.equals("1")){
 				p.martial_arts();
+				day++;
 				menu();
 			}else if(so.equals("2")){
 				p.study();
+				day++;
 				menu();
 			}else if(so.equals("3")){
 				p.Court_etiquette();
+				day++;
 				menu();
 			}
 		}

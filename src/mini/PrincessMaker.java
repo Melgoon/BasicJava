@@ -8,16 +8,18 @@ public class PrincessMaker {
 
 class Princess{
 	String name;
+	int age = 10;
 	int strength = 1; // 근력
 	int intellect = 1; // 지력
 	int grace = 1; // 기품
 	int charm = 1; // 매력
 	int ethicality = 1; // 도덕성
-	int appraisal = strength + intellect + grace + charm + ethicality;//평가
-	
+	int appraisal;//평가
 	void info(){ 
+		appraisal  = ( strength + intellect + grace + charm + ethicality);
 		System.out.println("-------------------------------");
 		System.out.println( "이름 : " + name );
+		System.out.println(" 나이 : " + age);
 		System.out.println("근력 : " + strength);
 		System.out.println("지력  : " + intellect);
 		System.out.println("기품  : " + grace);
@@ -269,10 +271,8 @@ class Princess{
 					money += 1700;
 					strength += 2;
 				}
-				if(strength > 10){
 					
 				}
-			}
 			void martial_arts(){
 				Random random = new Random(); 
 				Boolean [] martial_arts = new Boolean[3];
@@ -384,14 +384,8 @@ class Princess{
 					money -= 4000;
 					intellect += 5;
 				}
-												
-				
-		for(int i = 0; i < appraisal; i++){
-			appraisal = strength + intellect + grace + charm + ethicality;
-			return;
-		}
-	}
+			}
 }
-
 //Court etiquette 궁중 예법
 
+//일수%365 == 0
